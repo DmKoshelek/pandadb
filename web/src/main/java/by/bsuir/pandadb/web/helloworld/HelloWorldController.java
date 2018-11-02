@@ -1,6 +1,6 @@
-package by.bsuir.realEstateAgency.web.helloworld;
+package by.bsuir.pandadb.web.helloworld;
 
-import by.bsuir.realEstateAgency.core.helloworld.HelloWorldService;
+import by.bsuir.pandadb.core.helloworld.HelloWorldService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;

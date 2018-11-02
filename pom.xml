@@ -16,7 +16,7 @@
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
-        <org.springframework-version>4.3.10.RELEASE</org.springframework-version>
+        <org.springframework-version>4.3.12.RELEASE</org.springframework-version>
     </properties>
 
     <dependencyManagement>
@@ -68,7 +68,7 @@
         </dependencies>
     </dependencyManagement>
     <build>
-        <finalName>realEstateAgency</finalName>
+        <finalName>pandadb</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.tomcat.maven</groupId>

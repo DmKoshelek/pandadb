@@ -1,4 +1,4 @@
-package by.bsuir.realEstateAgency.core.helloworld;
+package by.bsuir.pandadb.core.helloworld;
 
 import org.springframework.stereotype.Service;
 
