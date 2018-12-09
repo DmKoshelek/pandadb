@@ -5,5 +5,29 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
                            http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
-    <context:component-scan base-package="by.bsuir.pandadb"/>
+    <context:component-scan base-package="by.bsuir.pandadb.core"/>
+
+    <bean name="factoryTypeSerializer" class="by.bsuir.pandadb.core.factory.FactoryTypeSerializers">
+        <property name="mapSerializers">
+            <map>
+                <entry key="CHAR" value-ref="charSerializer"/>
+                <entry key="DOUBLE" value-ref="doubleSerializer"/>
+                <entry key="INTEGER" value-ref="integerSerializer"/>
+            </map>
+        </property>
+    </bean>
+
+    <bean name="factoryTypes" class="by.bsuir.pandadb.core.factory.FactoryTypes"/>
+
+    <bean name="factoryComparators" class="by.bsuir.pandadb.core.factory.FactoryComparators">
+        <property name="mapComparators">
+            <map>
+                <entry key="CHAR" value-ref="defaultDBComparator"/>
+                <entry key="DOUBLE" value-ref="defaultDBComparator"/>
+                <entry key="INTEGER" value-ref="defaultDBComparator"/>
+            </map>
+        </property>
+    </bean>
+
+    <context:property-placeholder location="classpath:config.properties"/>
 </beans>
