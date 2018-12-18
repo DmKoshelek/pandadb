@@ -86,4 +86,9 @@ public class SQLController {
     public SQLResult notFoundHandler(ParseException e){
         return new SQLResult(SQLResultType.ERROR, "Value can't be parse");
     }
+
+    @ExceptionHandler(AlreadyExistTableException.class)
+    public SQLResult notFoundHandler(AlreadyExistTableException e){
+        return new SQLResult(SQLResultType.ERROR, "table " + e.getMessage() + " already exist");
+    }
 }

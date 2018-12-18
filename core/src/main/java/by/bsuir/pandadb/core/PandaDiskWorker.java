@@ -57,9 +57,6 @@ public class PandaDiskWorker {
         saveStateOfFactoryTables();
         saveTables();
         saveRevision();
-        currentRevision--;
-        removeRevisionDirectory();
-        currentRevision++;
         openLogFile();
     }
 

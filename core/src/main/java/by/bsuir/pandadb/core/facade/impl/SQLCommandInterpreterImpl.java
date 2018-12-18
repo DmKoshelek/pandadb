@@ -1,6 +1,7 @@
 package by.bsuir.pandadb.core.facade.impl;
 
 import by.bsuir.pandadb.core.dao.DAOTables;
+import by.bsuir.pandadb.core.exception.AlreadyExistTableException;
 import by.bsuir.pandadb.core.exception.FieldNotFoundException;
 import by.bsuir.pandadb.core.facade.SQLCommandInterpreter;
 import by.bsuir.pandadb.core.factory.FactoryTypeSerializers;
@@ -58,7 +59,7 @@ public class SQLCommandInterpreterImpl implements SQLCommandInterpreter {
         String newTableName = sqlCommand.getTable();
 
         if (daoTables.getTable(newTableName) != null) {
-            return new SQLResult(SQLResultType.ERROR, "table " + newTableName + " already exist");
+            throw new AlreadyExistTableException("newTableName");
         }
 
         DBTable dbTable = new DBTable();
